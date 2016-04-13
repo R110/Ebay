@@ -1,0 +1,11 @@
+<h1>New Product</h1>
+<form method='post' action="/products/create">
+
+  Title: <input name="product_title" type="text"> <br>
+  Description: <input name="product_description" type="text"> <br>
+  Deadline: <input name="product_deadline" type="text"> <br>
+
+  <button type="submit">Submit</button>
+  <input type="hidden" name="authenticity_token"
+        value="<%= form_authenticity_token %>">
+</form>

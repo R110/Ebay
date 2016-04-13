@@ -1,0 +1,8 @@
+<form method='post' action="/users/create">
+
+  Name: <input name="user_name" type="text"> <br>
+  Email: <input name="user_email" type="text"> <br>
+  <button type="submit">Submit</button>
+  <input type="hidden" name="authenticity_token"
+        value="<%= form_authenticity_token %>">
+</form>
