@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create(name: "Jed", email_address: "jed@aol.com")
 User.create(name: "Jo", email_address: "jo@aol.com")
-User.create(name: "John", email_address: "john@aol.com"))
+User.create(name: "John", email_address: "john@aol.com")
 
-Product.create(title: "Ruby", description: "dynamic", deadline:"tues", bids:[], user: User.first)
-Product.create(title: "Javascript", description: "dynamic", deadline:"wed", bids:[], user: User.first)
+Product.create(title: "Ruby", description: "dynamic", deadline:"tues", user: User.first)
+Product.create(title: "Javascript", description: "dynamic", deadline:"wed", user: User.first)

@@ -2,3 +2,25 @@ Title: <%= @product.title %> <br>
 
 Description: <%= @product.description %><br>
 Deadline: <%= @product.deadline %> <br>
+
+
+<h2> <% @bids.each do |bid|  %>
+
+ User: <%= bid.user.name %>
+Id: <%= bid.id %>
+Amount: <%= bid.amount %>
+
+ <%end%></h2>
+
+<hr><hr>
+
+
+<form action="/products/<%=@product.id%>/create" method="post">
+
+  Email: <input name="email_address" type='text'>
+  Amount: <input name="amount" type='text'>
+
+<button type="submit">Submit</button>
+
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form>

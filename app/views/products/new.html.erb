@@ -1,5 +1,5 @@
 <h1>New Product</h1>
-<form method='post' action="/products/create">
+<form method='post' action="/users/<%=params[:user_id]%>/products">
 
   Title: <input name="product_title" type="text"> <br>
   Description: <input name="product_description" type="text"> <br>

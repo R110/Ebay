@@ -1,7 +1,35 @@
 Rails.application.routes.draw do
 
-  get "/users/:id" => "users#show"
-  get "/users/new" => "users#new"
+  resources :users, only: [:new, :show, :create] do
+    resources :products #, only: [:index, :new, :create, :show
+  end
+  post("/products/:product_id/create", :to => "bids#create")
+
+#                   GET    /user/:user_id/products(.:format)          products#index
+#                  POST   /user/:user_id/products(.:format)          products#create
+# new_user_product GET    /user/:user_id/products/new(.:format)      products#new
+# edit_user_product GET    /user/:user_id/products/:id/edit(.:format) products#edit
+#     user_product GET    /user/:user_id/products/:id(.:format)      products#show
+#                  PATCH  /user/:user_id/products/:id(.:format)      products#update
+#                  PUT    /user/:user_id/products/:id(.:format)      products#update
+#                  DELETE /user/:user_id/products/:id(.:format)      products#destroy
+#       user_index POST   /user(.:format)                            user#create
+#         new_user GET    /user/new(.:format)                        user#new
+#             user GET    /user/:id(.:format)                        user#show
+
+
+  # get "/users/new" => "users#new"
+  # get "/users/:id" => "users#show"
+  # post("/users", :to => "users#create")
+  #
+  # get "/" => "products#index"
+  # get "/products" => "products#index"
+  # get "/products/new" => "products#new"
+  #
+  # post("/products/create", :to => "products#create")
+  # get "/products/:product_id" => "products#show" #least specific so put last
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
